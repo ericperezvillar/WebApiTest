@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApiTest</name>
+    </assembly>
+    <members>
+        <member name="M:WebApiTest.Controllers.WeatherForecastController.Get">
+            <summary>
+            Get all weather forescasts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiTest.Controllers.WeatherForecastController.Get(System.Int32)">
+            <summary>
+            Gets a value by ID.
+            </summary>
+            <param name="id">The id of the value you wish to get.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

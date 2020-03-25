@@ -1,0 +1,637 @@
+{
+  "x-generator": "NSwag v13.2.5.0 (NJsonSchema v10.1.7.0 (Newtonsoft.Json v11.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "My First Swagger",
+    "description": "A simple ASP.NET Core web API 2",
+    "termsOfService": "https://example.com/terms",
+    "contact": {
+      "name": "Eric Perez Villar",
+      "url": "https://www.linkedin.com/in/eric-perez-villar-87aa6746/",
+      "email": ""
+    },
+    "license": {
+      "name": "Use under LICX",
+      "url": "https://example.com/license"
+    },
+    "version": "v1"
+  },
+  "host": "localhost:44360",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/Person": {
+      "get": {
+        "tags": [
+          "Person"
+        ],
+        "summary": "Get the full list of people",
+        "operationId": "Person_ListAllPeople",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Person"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Person"
+        ],
+        "summary": "Insert a new person to the list of people",
+        "operationId": "Person_InsertPerson",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "person",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Person"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Person"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/product": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Get the full list of products",
+        "operationId": "ListAllProducts",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Product"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "Product_AddProduct",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "product",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Product"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/product/code/{codart}": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "Product_ListProductsByCode",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "codart",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Product"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/product/description/{desart}": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "operationId": "Product_ListProductsByDescription",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "desart",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Product"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TodoItems": {
+      "get": {
+        "tags": [
+          "TodoItems"
+        ],
+        "summary": "Get every item from the list",
+        "operationId": "TodoItems_GetTodoItems",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TodoItemDTO"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TodoItems"
+        ],
+        "operationId": "TodoItems_CreateTodoItem",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "todoItemDTO",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TodoItemDTO"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/TodoItem"
+            }
+          }
+        }
+      }
+    },
+    "/api/TodoItems/{id}": {
+      "get": {
+        "tags": [
+          "TodoItems"
+        ],
+        "operationId": "TodoItems_GetTodoItem",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int64",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/TodoItemDTO"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TodoItems"
+        ],
+        "operationId": "TodoItems_UpdateTodoItem",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int64",
+            "x-nullable": false
+          },
+          {
+            "name": "todoItemDTO",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TodoItemDTO"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TodoItems"
+        ],
+        "operationId": "TodoItems_DeleteTodoItem",
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int64",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "file"
+            }
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "Get all weather forescasts",
+        "operationId": "WeatherForecast_GetAll",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/WeatherForecast"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "Creates a TodoItem.",
+        "description": "Note that the key is a GUID and not an integer.\n \n    POST /Todo\n    {\n       \"key\": \"0e7ad584-7788-4ab1-95a6-ca0a5b444cbb\",\n       \"name\": \"Item1\",\n       \"isComplete\": true\n    }",
+        "operationId": "WeatherForecast_Create",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TodoItem"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "x-nullable": false,
+            "description": "Returns the newly created item",
+            "schema": {
+              "$ref": "#/definitions/TodoItem"
+            }
+          },
+          "400": {
+            "x-nullable": false,
+            "description": "If the item is null",
+            "schema": {
+              "$ref": "#/definitions/TodoItem"
+            }
+          }
+        }
+      }
+    },
+    "/WeatherForecast/{id}": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "summary": "Gets a value by ID.",
+        "operationId": "WeatherForecast_Get",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The id of the value you wish to get.",
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Person": {
+      "type": "object",
+      "required": [
+        "userName",
+        "name",
+        "email",
+        "confirmEmail",
+        "age"
+      ],
+      "properties": {
+        "userName": {
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 3,
+          "pattern": "[a-zA-Z\\\\s]*"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 50,
+          "minLength": 3
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 50,
+          "minLength": 1,
+          "pattern": "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}"
+        },
+        "confirmEmail": {
+          "type": "string",
+          "format": "email",
+          "minLength": 1
+        },
+        "age": {
+          "type": "integer",
+          "format": "int32",
+          "maximum": 120.0,
+          "minimum": 1.0
+        }
+      }
+    },
+    "Product": {
+      "type": "object",
+      "required": [
+        "code",
+        "description",
+        "pcCart",
+        "netWeight",
+        "creationDate",
+        "price"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Product code",
+          "maxLength": 10,
+          "minLength": 0
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 100,
+          "minLength": 1
+        },
+        "um": {
+          "type": "string"
+        },
+        "codStat": {
+          "type": "string",
+          "pattern": "^[A-Z]+[a-zA-Z\"'\\s-]*$"
+        },
+        "pcCart": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "netWeight": {
+          "type": "number",
+          "format": "double"
+        },
+        "state": {
+          "type": "string"
+        },
+        "creationDate": {
+          "title": "Release Date",
+          "type": "string",
+          "format": "date"
+        },
+        "price": {
+          "type": "number",
+          "format": "double",
+          "maximum": 100.0,
+          "minimum": 1.0
+        }
+      }
+    },
+    "TodoItemDTO": {
+      "type": "object",
+      "required": [
+        "id",
+        "isComplete"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isComplete": {
+          "type": "boolean"
+        }
+      }
+    },
+    "TodoItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "isComplete"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isComplete": {
+          "type": "boolean"
+        },
+        "secret": {
+          "type": "string"
+        }
+      }
+    },
+    "WeatherForecast": {
+      "type": "object",
+      "required": [
+        "date",
+        "temperatureC",
+        "temperatureF"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "temperatureC": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "temperatureF": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "summary": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
